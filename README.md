@@ -55,7 +55,7 @@ The goal of this project is to demonstrate real-time bidirectional communication
 ### Steps
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Rohann022/prodigytask-4.git
 
 # Navigate to project directory
 cd your-repo-name
