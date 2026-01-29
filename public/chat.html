@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realtime Chat - Professional Chat Application</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body class="chat-body">
+  <header>
+    <h1>Realtime Chat</h1>
+    <div class="header-right">
+      <span id="current-room-title">#general</span>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Rooms Sidebar -->
+    <aside class="rooms">
+      <h3>Chat Rooms</h3>
+      <ul id="room-list">
+        <li data-room="general" class="active">general</li>
+        <li data-room="random">random</li>
+      </ul>
+      
+      <h3>Create New Room</h3>
+      <input type="text" id="new-room" placeholder="Enter room name..." />
+      <button id="create-room">Create Room</button>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <section class="chat">
+      <ul id="messages"></ul>
+      
+      <!-- File Preview -->
+      <div id="file-preview" class="file-preview"></div>
+      
+      <form id="message-form">
+        <input type="file" id="file-input" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt" style="display: none;" />
+        <button type="button" id="file-btn" class="file-button" title="Attach file">📎</button>
+        <input id="message-input" autocomplete="off" placeholder="Type your message..." />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- Online Users Sidebar -->
+    <aside class="users">
+      <h3>Online Users</h3>
+      <p class="users-hint">Click a user to start a private chat</p>
+      <ul id="users-list">
+        <!-- Users will be populated dynamically -->
+      </ul>
+      
+      <!-- User Search Section -->
+      <div class="user-search-section">
+        <h3>Search Users</h3>
+        <input type="text" id="user-search" placeholder="Search by name or email..." />
+        <ul id="search-results"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/chat.js"></script>
+</body>
+</html>
